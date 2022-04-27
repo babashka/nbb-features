@@ -2,11 +2,10 @@
   "name": "nbb-features",
   "version": "0.3.9",
   "type": "module",
-  "main": "index.mjs",
   "bin": {
     "nbb-features": "./lib/nbb_main.js"
   },
-  "description": "This file only exists to test building nbb with all features enabled",
+  "description": "nbb with multiple features enabled",
   "dependencies": {
     "import-meta-resolve": "^1.1.1"
   },
