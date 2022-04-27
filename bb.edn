@@ -1,0 +1,25 @@
+{:paths ["script"]
+ :deps
+ {nbb.build/nbb.build
+  {:git/url "https://github.com/babashka/nbb"
+   :git/sha "fe8b3ebd49f093f108d0f3c213ab9db2a715b00e"
+   :deps/root "build"}
+  #_{:local/root "../nbb/build"}
+  nbb/nbb
+  {:git/url "https://github.com/babashka/nbb"
+   :git/sha "fe8b3ebd49f093f108d0f3c213ab9db2a715b00e"}
+  #_{:local/root "../nbb"}
+  datascript/deps {:local/root "features/datascript"}
+  datascript-transit/deps {:local/root "features/datascript-transit"}
+  linked/deps {:local/root "features/linked"}}
+ :tasks
+ {:requires ([babashka.fs :as fs]
+             [nbb.build :as build])
+
+  clean (fs/delete-tree "lib")
+
+  release {:depends [clean]
+           :doc "Compiles release build."
+           :task (build/release *command-line-args*)}
+
+  test nbb-feature-tests/main}}
