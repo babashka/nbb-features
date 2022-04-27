@@ -14,7 +14,7 @@ in to a custom build of nbb.
 Use the features in this repository to build a custom nbb. Here are the steps for doing this:
 
 1. In a new project, copy this repository's `bb.edn` and `package.json` files.
-  * NOTE: The `:git/sha` for `nbb/nbb` may be old. You may want to update it to build the most recent version of nbb.
+   * NOTE: The `:git/sha` for `nbb/nbb` may be old. You may want to update it to build the most recent version of nbb.
 2. In `package.json`, rename the `nbb-features` references to make them your own.
 3. In `bb.edn`, leave the nbb dependencies as those are needed for building nbb. As for the other dependencies, replace them with the features you want enabled. If the feature is local, use `:local/root` as seen in the copied `bb.edn`. If using a feature from this remote repository, pull them in like this:
 
@@ -24,7 +24,7 @@ Use the features in this repository to build a custom nbb. Here are the steps fo
    {:git/url "https://github.com/babashka/nbb-features"
     :git/sha "7af8569a7f932af2cde5f8677133915540ab0c49"
     :deps/root "features/datascript"}
-   }}
+   }
   ```
 
 4. Build your custom nbb with `bb release`. Run `node lib/nbb_main.js` and your nbb with custom features enabled will run!
