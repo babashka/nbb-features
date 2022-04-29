@@ -18,6 +18,11 @@
             [datascript.test.query-find-specs]
             [datascript.test.transact]))
 
+(defmethod t/report [::t/default :end-run-tests] [{:keys [error fail]}]
+  (if (pos? (+ error fail))
+    (js/process.exit 1)
+    (js/process.exit 0)))
+
 (defn init []
   (t/run-tests 'datascript.test.query
                'datascript.test.pull-api
