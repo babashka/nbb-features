@@ -17,3 +17,5 @@
 
 (defn all-datoms [db]
   (into #{} (map (juxt :e :a :v)) (d/datoms db :eavt)))
+
+(def no-namespace-maps {:before #(alter-var-root #'*print-namespace-maps* (constantly false))})

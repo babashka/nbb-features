@@ -16,6 +16,8 @@
             [datascript.test.query-return-map]
             [datascript.test.tuples]
             [datascript.test.query-find-specs]
+            [datascript.test.components]
+            [datascript.test.serialize]
             [datascript.test.transact]))
 
 (defmethod t/report [::t/default :end-run-tests] [{:keys [error fail]}]
@@ -34,6 +36,8 @@
                'datascript.test.query-fns
                'datascript.test.tuples
                'datascript.test.transact
+               'datascript.test.components
+               'datascript.test.serialize
                'datascript.test.query-pull
                'datascript.test.query-find-specs
                'datascript.test.query-return-map
