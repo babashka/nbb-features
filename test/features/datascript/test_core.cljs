@@ -3,7 +3,7 @@
   (:require [cljs.test :as t]
             [datascript.core :as d]))
 
-(defmethod t/assert-expr 'thrown-msg? [menv msg form]
+(defmethod t/assert-expr 'thrown-msg? [_ctx _menv msg form]
   (let [[_ match & body] form]
     `(try
        ~@body
