@@ -29,7 +29,7 @@
   test nbb-feature-tests/main
 
   update-nbb
-  {:desc "Update to latest nbb tag"
+  {:doc "Update to latest nbb tag"
    :extra-deps {borkdude/rewrite-edn {:mvn/version "0.2.0"}}
    :requires ([borkdude.rewrite-edn :as r])
    :task
